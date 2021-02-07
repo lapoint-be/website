@@ -7,7 +7,7 @@
   </head>
   <body>
     <div>
-      <h2>Have We DB?</h2>
+      <h2>Are we connected to the database?</h2>
       <?php include "config.php" ?>
       <hr />
     </div>

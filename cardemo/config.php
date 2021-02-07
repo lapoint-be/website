@@ -15,6 +15,6 @@
       exit();
   }
   else {
-    echo "<p class=\"success\">You're connected to the " . $dbname . " database. Have a nice day 😃</p>";
+    echo "<p class=\"success\">You've managed to connect to the " . $dbname . " database somehow. Have a nice day!</p>";
   }
 ?>
