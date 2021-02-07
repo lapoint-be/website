@@ -12,20 +12,20 @@
       <hr />
     </div>
     <div>
-      <h2>Display One Entry</h2>
+      <h2>Favorite Car</h2>
       <?php
         $query = "SELECT make, model, year FROM cars";
         $result = $mysqli->query($query);
         /* associative array */
         $row = $result->fetch_array(MYSQLI_ASSOC);
         printf ("%d %s %s\n", $row["year"], $row["make"], $row["model"]);
-        echo "<p>My top pick is a " . $row["year"] . " " . $row["make"] . " " . $row["model"] . ". </p>";
+        echo "<p>My favorite car is a " . $row["year"] . " " . $row["make"] . " " . $row["model"] . " for good reason, the car looks amazing. </p>";
         $mysqli -> close();
       ?>
       <hr />
     </div>
     <div>
-      <h2>Display All Entries</h2>
+      <h2>Other Highlights</h2>
       <ul>
         <?php
           $con = new mysqli("localhost", $dbuser, $dbpass, $dbname);
