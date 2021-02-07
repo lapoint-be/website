@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>eg_php-basic</title>
+    <title>car demo</title>
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
