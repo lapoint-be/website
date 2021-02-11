@@ -21,7 +21,7 @@
     <div class="container">
 
         <div class="page-header">
-            <h1>Products</h1>
+            <h1>Grocery Items</h1>
         </div>
 
         <?php
