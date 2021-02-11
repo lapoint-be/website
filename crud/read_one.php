@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>PDO - Read One Record - PHP CRUD Tutorial</title>
+    <title>Specific Grocery Item</title>
 
     <!-- Latest compiled and minified Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
@@ -14,13 +14,13 @@
     <div class="container">
 
         <div class="page-header">
-            <h1>Read Product</h1>
+            <h1>Product Description</h1>
         </div>
 
         <?php
         // get passed parameter value, in this case, the record ID
         // isset() is a PHP function used to verify if a value is there or not
-        $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Record ID not found.');
+        $id=isset($_GET['id']) ? $_GET['id'] : die('ERROR: Item not found, please try again.');
 
         //include database connection
         include 'config/database.php';
@@ -73,7 +73,7 @@
             <tr>
                 <td></td>
                 <td>
-                    <a href='index.php' class='btn btn-danger'>Back to read products</a>
+                    <a href='index.php' class='btn btn-danger'>Back to the list.</a>
                 </td>
             </tr>
         </table>

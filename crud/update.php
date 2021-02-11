@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>PDO - Update a Record - PHP CRUD Tutorial</title>
+    <title>Update a List Item.</title>
 
     <!-- Latest compiled and minified Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
@@ -13,7 +13,7 @@
     <div class="container">
 
         <div class="page-header">
-            <h1>Update Product</h1>
+            <h1>Update Item</h1>
         </div>
 
         <?php
@@ -120,7 +120,7 @@
                     <td></td>
                     <td>
                         <input type='submit' value='Save Changes' class='btn btn-primary' />
-                        <a href='index.php' class='btn btn-danger'>Back to read products</a>
+                        <a href='index.php' class='btn btn-danger'>Back to the list.</a>
                     </td>
                 </tr>
             </table>

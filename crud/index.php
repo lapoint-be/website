@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>PDO - Read Records - PHP CRUD Tutorial</title>
+    <title>Grocery List</title>
 
     <!-- Latest compiled and minified Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
@@ -21,7 +21,7 @@
     <div class="container">
 
         <div class="page-header">
-            <h1>Read Products</h1>
+            <h1>Products</h1>
         </div>
 
         <?php
@@ -110,7 +110,7 @@
 // confirm record deletion
 function delete_user( id ){
 
-    var answer = confirm('Are you sure?');
+    var answer = confirm('Are you sure you would like to do that, there is no going back...');
     if (answer){
         // if user clicked ok,
         // pass the id to delete.php and execute the delete query

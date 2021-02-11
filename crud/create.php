@@ -50,9 +50,9 @@
 
                 // Execute the query
                 if($stmt->execute()){
-                    echo "<div class='alert alert-success'>Record was saved.</div>";
+                    echo "<div class='alert alert-success'>Item was added to the list.</div>";
                 }else{
-                    echo "<div class='alert alert-danger'>Unable to save record.</div>";
+                    echo "<div class='alert alert-danger'>Item couldn't be added to the list.</div>";
                 }
 
             }
@@ -90,7 +90,7 @@
                     <td></td>
                     <td>
                         <input type='submit' value='Save' class='btn btn-primary' />
-                        <a href='index.php' class='btn btn-danger'>Back to read products</a>
+                        <a href='index.php' class='btn btn-danger'>Back to the list.</a>
                     </td>
                 </tr>
             </table>
