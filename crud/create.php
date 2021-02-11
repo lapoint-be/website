@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Customizable List</title>
+    <title>Add List Item</title>
     <!-- Latest compiled and minified Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 </head>
@@ -53,7 +53,7 @@
                 die('ERROR: ' . $exception->getMessage());
             }
         }
-        ?>         
+        ?>
         <!-- html form here where the product information will be entered -->
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
             <table class='table table-hover table-responsive table-bordered'>
