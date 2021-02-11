@@ -1,14 +1,16 @@
 <?php
+// used to connect to the database
+$host = "localhost";
 $db_name = "grocery";
 $username = "cruduser";
 $password = "this#is#for#lists";
 
-//opens a new mysqli connection (the preferred method today)
-$mysqli = new mysqli("localhost", $dbuser, $dbpass, $dbname);
-
-/* check connection */
-if ($mysqli->connect_errno) {
-    printf("<p class=\"error\">Connect failed: %s</p>", $mysqli->connect_error);
+try {
+    $con = new PDO("mysql:host={$host};dbname={$db_name}", $username, $password);
 }
-else {}
+
+// show error
+catch(PDOException $exception){
+    echo "Connection error: " . $exception->getMessage();
+}
 ?>
