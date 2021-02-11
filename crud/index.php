@@ -48,7 +48,6 @@
 
               //creating our table heading
               echo "<tr>";
-                  echo "<th>ID</th>";
                   echo "<th>Name</th>";
                   echo "<th>Description</th>";
                   echo "<th>Price</th>";
@@ -66,7 +65,6 @@
 
                   // creating new table row per record
                   echo "<tr>";
-                      echo "<td>{$id}</td>";
                       echo "<td>{$name}</td>";
                       echo "<td>{$description}</td>";
                       echo "<td>${$price}</td>";
