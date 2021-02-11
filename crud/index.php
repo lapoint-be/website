@@ -31,7 +31,7 @@
         // delete message prompt will be here
 
         // select all data
-        $query = "SELECT name, description, price FROM products ORDER BY id DESC";
+        $query = "SELECT name, description, price FROM products ORDER BY name DESC";
         $stmt = $con->prepare($query);
         $stmt->execute();
 
