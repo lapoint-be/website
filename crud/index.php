@@ -31,7 +31,7 @@
         // delete message prompt will be here
 
         // select all data
-        $query = "SELECT name, description, price FROM products ORDER BY name DESC";
+        $query = "SELECT id, name, description, price, person FROM products ORDER BY id DESC";
         $stmt = $con->prepare($query);
         $stmt->execute();
 
@@ -48,6 +48,7 @@
 
               //creating our table heading
               echo "<tr>";
+                  echo "<th>ID</th>";
                   echo "<th>Name</th>";
                   echo "<th>Description</th>";
                   echo "<th>Price</th>";
@@ -65,9 +66,11 @@
 
                   // creating new table row per record
                   echo "<tr>";
+                      echo "<td>{$id}</td>";
                       echo "<td>{$name}</td>";
                       echo "<td>{$description}</td>";
                       echo "<td>{$price}</td>";
+                      echo "<td>{$person}</td>";
                       echo "<td>";
                           // read one record
                           echo "<a href='read_one.php?id={$id}' class='btn btn-info m-r-1em'>Read</a>";

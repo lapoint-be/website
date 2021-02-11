@@ -20,7 +20,7 @@
             try{
 
                 // insert query
-                $query = "INSERT INTO products SET name=:name, description=:description, price=:price, created=:created";
+                $query = "INSERT INTO products SET name=:name, description=:description, price=:price, created=:created, person=:person";
 
                 // prepare query for execution
                 $stmt = $con->prepare($query);
@@ -29,11 +29,13 @@
                 $name=htmlspecialchars(strip_tags($_POST['name']));
                 $description=htmlspecialchars(strip_tags($_POST['description']));
                 $price=htmlspecialchars(strip_tags($_POST['price']));
+                $person=htmlspecialchars(strip_tags($_POST['person']));
 
                 // bind the parameters
                 $stmt->bindParam(':name', $name);
                 $stmt->bindParam(':description', $description);
                 $stmt->bindParam(':price', $price);
+                $stmt->bindParam(':person', $person);
 
                 // specify when this record was inserted to the database
                 $created=date('Y-m-d H:i:s');
@@ -68,6 +70,10 @@
                 <tr>
                     <td>Price</td>
                     <td><input type='text' name='price' class='form-control' /></td>
+                </tr>
+                <tr>
+                    <td>Person</td>
+                    <td><input type='text' name='person' class='form-control' /></td>
                 </tr>
                 <tr>
                     <td></td>
