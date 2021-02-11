@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Single Product</title>
+    <title>PDO - Read One Record - PHP CRUD Tutorial</title>
 
     <!-- Latest compiled and minified Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
@@ -28,7 +28,7 @@
         // read current record's data
         try {
             // prepare select query
-            $query = "SELECT id, name, description, price FROM products WHERE id = ? LIMIT 0,1";
+            $query = "SELECT id, name, description, price, person FROM products WHERE id = ? LIMIT 0,1";
             $stmt = $con->prepare( $query );
 
             // this is the first question mark
@@ -44,6 +44,7 @@
             $name = $row['name'];
             $description = $row['description'];
             $price = $row['price'];
+            $person = $row['person'];
         }
 
         // show error
@@ -64,6 +65,10 @@
             <tr>
                 <td>Price</td>
                 <td><?php echo htmlspecialchars($price, ENT_QUOTES);  ?></td>
+            </tr>
+            <tr>
+                <td>Person</td>
+                <td><?php echo htmlspecialchars($person, ENT_QUOTES);  ?></td>
             </tr>
             <tr>
                 <td></td>
