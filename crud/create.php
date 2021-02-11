@@ -20,18 +20,20 @@
             try{
 
                 // insert query
-                $query = "INSERT INTO products SET name=:name, description=:description, price=:price, created=:created, person=:person";
+                $query = "INSERT INTO products SET id=:id, name=:name, description=:description, price=:price, person=:person, created=:created";
 
                 // prepare query for execution
                 $stmt = $con->prepare($query);
 
                 // posted values
+                $id=htmlspecialchars(strip_tags($_POST['id']));
                 $name=htmlspecialchars(strip_tags($_POST['name']));
                 $description=htmlspecialchars(strip_tags($_POST['description']));
                 $price=htmlspecialchars(strip_tags($_POST['price']));
                 $person=htmlspecialchars(strip_tags($_POST['person']));
 
                 // bind the parameters
+                $stmt->bindParam(':id', $id);
                 $stmt->bindParam(':name', $name);
                 $stmt->bindParam(':description', $description);
                 $stmt->bindParam(':price', $price);
@@ -59,6 +61,10 @@
         <!-- html form here where the product information will be entered -->
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
             <table class='table table-hover table-responsive table-bordered'>
+              <tr>
+                  <td>ID</td>
+                  <td><input type='text' name='name' class='form-control' /></td>
+              </tr>
                 <tr>
                     <td>Name</td>
                     <td><input type='text' name='name' class='form-control' /></td>
