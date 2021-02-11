@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>View Products</title>
+    <title>PDO - Read Records - PHP CRUD Tutorial</title>
 
     <!-- Latest compiled and minified Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
@@ -31,7 +31,7 @@
         // delete message prompt will be here
 
         // select all data
-        $query = "SELECT id, name, description, price, person FROM products ORDER BY id DESC";
+        $query = "SELECT id, name, description, price FROM products ORDER BY id DESC";
         $stmt = $con->prepare($query);
         $stmt->execute();
 
@@ -52,6 +52,7 @@
                   echo "<th>Name</th>";
                   echo "<th>Description</th>";
                   echo "<th>Price</th>";
+                  echo "<th>Person</th>";
                   echo "<th>Action</th>";
               echo "</tr>";
 

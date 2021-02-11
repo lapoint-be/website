@@ -2,11 +2,16 @@
 <html>
 <head>
     <title>Add List Item</title>
+
     <!-- Latest compiled and minified Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
 </head>
 <body>
+
+    <!-- container -->
     <div class="container">
+
         <div class="page-header">
             <h1>Create Product</h1>
         </div>
@@ -20,7 +25,7 @@
             try{
 
                 // insert query
-                $query = "INSERT INTO products SET id=:id, name=:name, description=:description, price=:price, person=:person, created=:created";
+                $query = "INSERT INTO products SET id=:id, name=:name, description=:description, price=:price, created=:created, person=:person";
 
                 // prepare query for execution
                 $stmt = $con->prepare($query);
@@ -61,10 +66,10 @@
         <!-- html form here where the product information will be entered -->
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
             <table class='table table-hover table-responsive table-bordered'>
-              <tr>
+                <tr>
                   <td>ID</td>
-                  <td><input type='text' name='name' class='form-control' /></td>
-              </tr>
+                  <td><input type='text' name='id' class='form-control' /></td>
+                </tr>
                 <tr>
                     <td>Name</td>
                     <td><input type='text' name='name' class='form-control' /></td>
@@ -90,8 +95,13 @@
                 </tr>
             </table>
         </form>
-    </div>
+    </div> <!-- end .container -->
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+<!-- Latest compiled and minified Bootstrap JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </body>
 </html>
