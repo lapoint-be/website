@@ -5,9 +5,15 @@ body {
 h1, h2 {
   text-align: center;
 }
+h1 {
+  font-size: 25px;
+}
+h2 {
+  font-size: 20px;
+}
 
 div {
-
+  font-size: 15px;
   background-color: #acacac;
   width: 80ch;
   justify-content: center;
