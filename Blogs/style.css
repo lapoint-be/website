@@ -6,14 +6,14 @@ h1, h2 {
   text-align: center;
 }
 h1 {
-  font-size: 25px;
+  font-size: 35px;
 }
 h2 {
-  font-size: 20px;
+  font-size: 30px;
 }
 
 div {
-  font-size: 15px;
+  font-size: 25px;
   background-color: #acacac;
   width: 80ch;
   justify-content: center;
