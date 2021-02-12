@@ -1,0 +1,13 @@
+body {
+  background-color: #7c7c7c;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+div {
+  background-color: #acacac;
+  width: 80ch;
+  margin: 2em;
+}

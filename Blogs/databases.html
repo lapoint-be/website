@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Terminal Databases</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>How to Use Databases</h1>
+    <h2>Without Using phpMyAdmin</h2>
+    <div>
+      <p>If you're like me, you've probably had some issues using <code>phpMyAdmin</code>. Luckily, there are many ways to bypass this interface to make and maintain any mysql databases you may need for
+        your projects. For this process you will need a server, I personally use an Ubuntu server from DigitalOcean but any should suffice, with the full LAMP stack installed upon it. If you find
+        yourself unable to access your server there may be some other issues that should be addressed before committing to your development.
+      </p>
+    </div>
+    <div>
+      <h2>Accessing your Server</h2>
+      <p> This is a fairly basic process, It's just connecting to your server through the command terminal to ctually access the back-end code which runs your sites. Within your command terminal you
+        should use (<code>ssh 'user'@'your IP'</code>) which will prompt your password to allow only authorized users access to your server. This interface may seem confusing at first but it is
+        just a code-based version of your file explorer. Once you're connected to your server you'll be able to access the mysql section to create an alter your very own databases!
+      </p>
+    </div>
+    <div>
+      <h2>Using mysql for Databases</h2>
+      <p> After connecting to your server you'll need to switch over to mysql to alter or create any databases. I accomplish this by using (<code>mysql -u 'user' -p</code>) but if you now a different
+        method feel free to use that. This will prompt another password check, then your coding language will be switched to mysql. You can exit this at nearly anytime the same way you'd end the connection
+        to your server (<code>exit</code>). In order to see what databases you may already have, so you don't accidentally make more than you need, you can use the phrase (<code>SHOW DATABASES;</code>)
+        which will give you the full list of any databases located in your location. The actual method of creating a database is as simple as that last command, just (<code>CREATE DATABASE 'name';</code>) and
+        then (<code>use 'name';</code>) to access. Now you'll want to make a sort of proxy user for this database to avoid using your own credentials for public access. This happens through (<code>CREATE USER
+        'name'@localhost IDENTIFIED BY ''password'';</code>) then granting access by (<code>GRANT ALL PRIVILEGES ON 'database name'.* TO 'name'@localhost;</code>) and (<code>FLUSH PRIVILEGES;</code>) to
+        refresh the settings.
+      </p>
+    </div>
+    <div>
+      <h2>Congratulations! You now have a database and a user authorized to access it. </h2>
+      <h2>My next post will be on how to create and populate tables through this method.</h2>
+    </div>
+  </body>
+</html>
