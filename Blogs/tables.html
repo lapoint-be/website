@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Command Prompt Tables</title>
+  </head>
+  <body>
+    <h1>Creating Tables</h1>
+    <h2>Through the Command Terminal</h2>
+    <div>
+      <h2>Prerequisites</h2>
+      <p>This tutorial requires a mysql database for it to work, if you are having issues with those I have another tutorial detailing how to create those: <a href="./databases.html">Here.</a></p>
+    </div>
+    <div>
+      <h2>Accessing the Correct Database</h2>
+      <p>Once you've got yourself a datbase, you'll need a table to store all of the data you my be sending from the front-end of your site. For this we'll need to be in our newly created database,
+      if you've exited it this will require (<code>ssh 'user'@'IP address'</code>) before using (<code>mysql -u 'user' -p</code>) and entering your password to access mysql. Similar to my last
+      tutorial, you'll need to "use" the database you want your table located in (<code>use 'database name';</code>) and if you can't remember the database name (<code>SHOW DATABASES;</code>)
+      will bring up all the names.
+    </p>
+    </div>
+    <div>
+      <h2>Creating the Table</h2>
+      <p>Now that you are in your preffered database it is time to create the table itself. You'll need to define the columns of the table as you create it, which is where this code comes into
+      play: (<code>create table 'table name'('column 1' VARCHAR('x'), 'column 2' VARCHAR('x'), etc...);</code>) This code can be used to create tables with any number of columns up to a certain
+      point where the table itself can't store any more information in a row. That is also where the "VARCHAR('x')" is necessary, this will set the max number of characters allowed within each
+      column, so you can set the max number of input characters. If you only want to allow a 3-digit input then 'x' would be changed to 3, I personally use integers such as 32, 64, 128 to align
+      with basic memory patterns but any whole number will work.</p>
+    </div>
+    <div>
+      <h2>Manually Inputting Data</h2>
+      <p>If you've already got a page set up to show information from the table, or you'd just like to see if the table is accepting data properly, then it is possible to also directly input
+      data into the table. This will require you to know what the necessary fields are for the table, as in the columns and their order: (<code>INSERT INTO 'table name'('column 1', 'column2', etc)
+      VALUES ('value 1', 'value 2', etc);</code>) This will put the designated input directly into the table and store it there to be called later from somewhere else. It is also possible to view
+      a tables information from the command line as well (<code>SELECT * FROM 'table name';</code>) That code will display the entire table without sorting the data. If you want the data sorted
+      by a specific column you'll need to add "ORDER BY 'column name'" to the previous code between the table name an the semi-colon.</p>
+    </div>
+    <div>
+      <h1>Congratulations, you can now create and interact with your own mysql tables from the command terminal.</h1>
+      <h2>The next step will be learning how to interact with the tables and databases from html or js files.</h2>
+      <h2>Good luck!</h2>
+    </div>
+  </body>
+</html>
