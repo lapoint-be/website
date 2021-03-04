@@ -49,7 +49,7 @@
     cubex += dx;
   }
 
-  // Score
+  // Score Display & Incrementation
   function drawScore() {
     ctx.font = "16px Arial";
     ctx.fillStyle = "#010101";
@@ -80,6 +80,7 @@
       }
   }
 
+  // Collision Detection & End Game
   function collisionDetection() {
     if(ballx > cubex && ballx < cubex+cubewidth && bally > cubey && bally < cubey+cubeheight) {
       alert("You've lost. Would you like to try again?");
