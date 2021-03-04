@@ -22,6 +22,7 @@
   var ballRadius= 10;
   var UpPressed = false;
   var DownPressed = false;
+  var interval = setInterval(draw, 10)
 
   // Protagonist
   function drawBall() {
@@ -72,9 +73,6 @@
           }
       }
   }
-
-  // Refresh
-  setInterval(draw, 10);
 
 </script>
 
