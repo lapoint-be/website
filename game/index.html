@@ -17,12 +17,18 @@
   // Variables
   var canvas = document.getElementById("gameWindow");
   var ctx = canvas.getContext("2d");
+  var dx = -20;
+  var cubex = canvas.width;
+  var cubey = canvas.height/2;
+  var cubewidth = 50;
+  var cubeheight = 50;
   var ballx = canvas.width/2;
   var bally = canvas.height-30;
   var ballRadius= 10;
   var UpPressed = false;
   var DownPressed = false;
   var interval = setInterval(draw, 10)
+  var score = 0
 
   // Protagonist
   function drawBall() {
@@ -31,6 +37,24 @@
       ctx.fillStyle = "#00BB77";
       ctx.fill();
       ctx.closePath();
+  }
+
+  // Antagonist
+  function drawCube() {
+    ctx.beginPath();
+    ctx.rect(cubex, cubey, cubewidth, cubeheight);
+    ctx.fillStyle = "#FF0000";
+    ctx.fill();
+    ctx.closePath();
+    cubex += dx;
+  }
+
+  // Score
+  function drawScore() {
+    ctx.font = "16px Arial";
+    ctx.fillStyle = "#010101";
+    ctx.fillText("Score: "+score, 8, 20);
+    score++
   }
 
   // Event Listeners
@@ -56,10 +80,26 @@
       }
   }
 
+  function collisionDetection() {
+    if(ballx > cubex && ballx < cubex+cubewidth && bally > cubey && bally < cubey+cubeheight) {
+      alert("You've lost. Would you like to try again?");
+      document.location.reload();
+      clearInterval(interval);
+            }
+  }
+
   // Animation
   function draw() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       drawBall();
+      drawCube();
+      drawScore();
+      collisionDetection();
+      if (cubex < 0) {
+        cubex = canvas.width;
+        cubey = Math.floor((Math.random() * canvas.height) + 0);
+      }
+
       if(DownPressed) {
           bally += 7;
           if (bally + ballRadius > canvas.height){
