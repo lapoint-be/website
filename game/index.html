@@ -12,6 +12,8 @@
 <body>
 
 <canvas id="gameWindow" width="1280" height="720"></canvas>
+<h1 style="text-align: center;">The goal of this game is to avoid the squares!
+Use the UP and DOWN arrow keys to move and see how long you last!</h1>
 
 <script>
   // Variables
@@ -29,6 +31,32 @@
   var DownPressed = false;
   var interval = setInterval(draw, 10)
   var score = 0
+
+  // Grid
+  function drawGrid () {
+    let s = 28
+    let nX = Math.floor(canvas.width / s)
+    let nY = Math.floor(canvas.height / s)
+    let pX = canvas.width - nX * s
+    let pY = canvas.height - nY * s
+    let pL = pX / 2
+    let pR = pX / 2
+    let pT = pY / 2
+    let pB = pY / 2
+
+   ctx.strokeStyle = 'lightgrey'
+   ctx.beginPath()
+   for (var x = pL; x <= canvas.width - pR; x += s) {
+      ctx.moveTo(x, pT)
+      ctx.lineTo(x, canvas.height - pB)
+   }
+   for (var y = pT; y <= canvas.height - pB; y += s) {
+      ctx.moveTo(pL, y)
+      ctx.lineTo(canvas.width - pR, y)
+   }
+   ctx.stroke()
+   ctx.closePath();
+ }
 
   // Protagonist
   function drawBall() {
@@ -92,6 +120,7 @@
   // Animation
   function draw() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+      drawGrid();
       drawBall();
       drawCube();
       drawScore();
