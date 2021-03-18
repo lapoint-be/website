@@ -8,29 +8,49 @@
       body { background-color: #666;}
     	canvas { background: #eee; display: block; margin: 0 auto; }
     </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<div id="start">
+  <p>The objective of this game is to avoid the squares for as long as possible. You can only move up and down using the respective arrow keys. Are you ready? Good Luck!</p>
+  <button type="button" onclick="begin()">Start!</button>
+</div>
+
+<div id="play">
 <canvas id="gameWindow" width="1280" height="720"></canvas>
 <h1 style="text-align: center;">The goal of this game is to avoid the squares!
 Use the UP and DOWN arrow keys to move and see how long you last!</h1>
+</div>
 
 <script>
   // Variables
   var canvas = document.getElementById("gameWindow");
   var ctx = canvas.getContext("2d");
   var dx = -20;
+  var hx = -10;
   var cubex = canvas.width;
   var cubey = canvas.height/2;
   var cubewidth = 50;
   var cubeheight = 50;
+  var huntx = canvas.width;
+  var hunty = bally - ballRadius;
+  var huntwidth = 50;
+  var huntheight = 50;
   var ballx = canvas.width/2;
   var bally = canvas.height-30;
   var ballRadius= 10;
   var UpPressed = false;
   var DownPressed = false;
-  var interval = setInterval(draw, 10)
+  var interval = 5;
   var score = 0
+
+  //Start Button
+  function begin() {
+    interval = setInterval(draw, 10);
+    document.getElementById("play").style.display= "block";
+    document.getElementById("start").style.display= "none";
+  }
 
   // Grid
   function drawGrid () {
@@ -77,6 +97,16 @@ Use the UP and DOWN arrow keys to move and see how long you last!</h1>
     cubex += dx;
   }
 
+  // Hunter Cube
+  function drawHunt() {
+    ctx.beginPath();
+    ctx.rect(huntx, hunty, huntwidth, huntheight);
+    ctx.fillStyle = "#420420";
+    ctx.fill();
+    ctx.closePath();
+    huntx += hx;
+  }
+
   // Score Display & Incrementation
   function drawScore() {
     ctx.font = "16px Arial";
@@ -115,6 +145,11 @@ Use the UP and DOWN arrow keys to move and see how long you last!</h1>
       document.location.reload();
       clearInterval(interval);
             }
+    if(ballx > huntx && ballx < huntx+huntwidth && bally > hunty && bally < hunty+huntheight) {
+      alert("You've lost. Would you like to try again?");
+      document.location.reload();
+      clearInterval(interval);
+            }
   }
 
   // Animation
@@ -123,11 +158,16 @@ Use the UP and DOWN arrow keys to move and see how long you last!</h1>
       drawGrid();
       drawBall();
       drawCube();
+      drawHunt();
       drawScore();
       collisionDetection();
       if (cubex < 0) {
         cubex = canvas.width;
         cubey = Math.floor((Math.random() * canvas.height) + 0);
+      }
+      if (huntx < 0) {
+        huntx = canvas.width;
+        hunty = bally - ballRadius;
       }
 
       if(DownPressed) {
