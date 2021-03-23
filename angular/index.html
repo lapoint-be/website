@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <head>
+    <meta charset="utf-8">
+    <title>Angular Calculator</title>
+  </head>
+  <body>
+    <div ng-app="">
+      <h2>Two Number Basic Math</h2>
+      <p>First Number: <input type="number" ng-model="firstnum"</p>
+      <p>Second Number: <input type="number" ng-model="secondnum"</p>
+      <h2>Addition: {{firstnum + secondnum}}</h2>
+      <h2>Subtraction: {{firstnum - secondnum}}</h2>
+      <h2>Multiplication: {{firstnum * secondnum}}</h2>
+      <h2>Division: {{firstnum / secondnum}}</h2>
+    </div>
+  </body>
+</html>
