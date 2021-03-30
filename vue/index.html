@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="style.css">
+<title>Brief View of Vue</title>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<body>
+<div id="card">
+  <h1>{{ title | capitalize }}</h1>
+  <div>
+    <input id="itemForm" v-on:keypress.enter="addItem"/>
+    <button v-on:click="addItem">Add Dinosaur</button>
+  </div>
+  <ul>
+    <li v-for="(item, index) in items">
+      <button v-on:click="deleteItem(index)">Delete</button>
+      {{ item.text }}
+    </li>
+  </ul>
+</div>
+
+<script>
+card = new Vue({
+  el: '#card',
+  data: {
+    title: "Dinosaurs",
+    items: [
+      {text: "Mosasaurus"},
+      {text: "Ankylosaurus"},
+      {text: "Struthiomimus"},
+      {text: "Spinosaurus"},
+    ]
+  },
+  methods: {
+    addItem: function(){
+      var input = document.getElementById('itemForm');
+
+      if (input.value !== ''){
+        this.items.push({
+          text: input.value
+        })
+        input.value = "";
+      }
+    },
+    deleteItem: function(index){
+      this.items.splice(index, 1);
+    }
+  },
+  filters: {
+    capialize: function(value) {
+      if (!value) return '';
+      value = value.toString();
+      return value.charAt(0).toUpperCase() + value.slice(1);
+    }
+  }
+});
+</script>
+
+</body>
+</html>
