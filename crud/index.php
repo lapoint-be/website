@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Grocery List</title>
+    <link rel="icon" type="image/x-icon" href="../Logo.png" />
 
     <!-- Latest compiled and minified Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
