@@ -5,3 +5,27 @@
   top: 0;
   left: 0;
 }
+
+#explain {
+  width: 20vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-left: 1vw;
+  padding-top: -1vw;
+  color: #777777;
+  line-height: 1.75em;
+}
+
+#yearsection {
+  line-height: .1em;
+}
+
+#away {
+  color: #ffffff00;
+  text-align: center;
+  font-size: 25px;
+  position: absolute;
+  top: 48.5vh;
+  left: 48.0vw;
+}
